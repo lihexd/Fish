@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset = "utf-8">
+	<title>Fish</title>
+	<meta name="viewport" content="width=device-width, initial-scale=0.96,user-scalable=no">
+	<style type="text/css">
+	body {
+    	
+	}
+	.all_bg {
+		width: 360px;
+		height: 620px;
+		margin: 0px auto;
+	}
+	.all_canvas {
+		position: relative;
+		width: 360px;
+		height: 620px;
+		margin: 0px;
+	}
+	#canvas1 {
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		z-index: 1;
+	}
+	#canvas2 {
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		z-index: 0;
+	}
+	#newGameBtn {
+		position: absolute;
+		width:360px;
+		
+		bottom:50px;
+		left:0px;
+		z-index:3;
+	}
+
+	</style>
+</head>
+ <body>
+	<div class = "all_bg">
+		<div class = "all_canvas">
+			<canvas id="canvas1" width="360" height="620"></canvas>
+			<canvas id="canvas2" width="360" height="620"></canvas>
+			<!-- <button id="newGameBtn">Restart</button> -->
+			<img id="newGameBtn"><img>
+		</div>
+		
+	</div>
+	
+	<audio id=bgMusic src="src/background.mp3" autoplay loop></audio>
+	<audio id=deadMusic src="src/colli.mp3"></audio>
+	<audio id=eatMusic src="src/eat.mp3"></audio>
+	<audio id=feedMusic src="src/feed.mp3"></audio>
+	
+	<script type="text/javascript">
+		document.getElementById("newGameBtn").style.display="none";
+	</script>
+	<script type="text/javascript" src = "js/musicControl.js"></script>
+	<script type="text/javascript" src = "js/main.js"></script>
+	<script type="text/javascript" src = "js/commonFunctions.js"></script>
+	<script type="text/javascript" src = "js/drawBackground.js"></script>
+	<script type="text/javascript" src = "js/ane.js"></script>
+	<script type="text/javascript" src = "js/fruit.js"></script>
+	<script type="text/javascript" src = "js/mom.js"></script>
+	<script type="text/javascript" src = "js/collision.js"></script>
+	<script type="text/javascript" src = "js/baby.js"></script>
+	<script type="text/javascript" src = "js/data.js"></script>
+	<script type="text/javascript" src = "js/wave.js"></script>
+	<script type="text/javascript" src = "js/bomb.js"></script>
+	<script type="text/javascript" src = "js/stab.js"></script>
+	<script type="text/javascript" src = "js/gameControl.js"></script>
+	<script type="text/javascript">
+            document.addEventListener('tizenhwkey', function(e) {
+				if(e.keyName == "back") {
+					try {
+						tizen.application.getCurrentApplication().exit();
+					} catch (error) {
+						console.error("getCurrentApplication(): " + error.message);
+					}
+				}
+			});
+	</script>
+
+</body>
+
+
+</html>
